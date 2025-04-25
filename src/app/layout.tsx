@@ -24,9 +24,12 @@ export default async function RootLayout({
     <SessionProvider
       refetchInterval={5 * 60}// 5 minutes
       session={session}>
-      <html lang="en" className="bg-background text-foreground">
-        <body className={inter.className}>
-          <Provider>{children}</Provider>
+      <html lang="en" className="bg-slate-950 dark:bg-slate-950">
+        <body className={`${inter.className} relative min-h-screen text-slate-200`}>
+          {/* Content container */}
+          <div className="relative z-10">
+            <Provider>{children}</Provider>
+          </div>
         </body>
       </html>
     </SessionProvider>

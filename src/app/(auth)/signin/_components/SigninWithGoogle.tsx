@@ -18,14 +18,16 @@ const SigninWithGoogle = () => {
   };
 
   return (
-    <div className=''>
-      <h2 className="text-center mt-2 text-secondary-700 text-sm font-bold">Or</h2>
-      <button onClick={(e) => { e.preventDefault(); loginWithGoogle() }} className='bg-gray-950 hover:bg-gray-800 text-white text-sm font-semibold my-2  rounded-lg w-full  '>
-        <div className='flex rounded-md justify-center items-center gap-5 p-2.5 relative bg-secondary-600 text-primary-50'>
-          <div>
-            <FcGoogle />
+    <div>
+      <button
+        onClick={(e) => { e.preventDefault(); loginWithGoogle() }}
+        className='bg-white dark:bg-slate-700 hover:bg-gray-50 dark:hover:bg-slate-600 border border-gray-200 dark:border-slate-600 text-slate-800 dark:text-white text-sm font-medium rounded-lg w-full transition-all duration-200 shadow-sm hover:shadow-md'
+      >
+        <div className='flex rounded-md justify-center items-center gap-3 p-2.5'>
+          <div className='flex-shrink-0 flex items-center justify-center'>
+            <FcGoogle className="w-5 h-5" />
           </div>
-          Continue with Google
+          <span>Continue with Google</span>
         </div>
       </button>
     </div>

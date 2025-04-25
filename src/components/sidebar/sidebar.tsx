@@ -50,21 +50,21 @@ export default function Sidebar({ items, menu, setMenu }: Props) {
       <div
         className={cn(
           'mt-14 fixed top-0 left-0 z-40 h-screen transition-all duration-300 ease-in-out',
-          'bg-card border-r border-border shadow-lg',
+          'bg-slate-900 border-r border-slate-800 shadow-lg',
           menu ? 'w-44' : 'w-16',
           'sm:translate-x-0 transform',
           menu ? 'translate-x-0' : '-translate-x-full sm:translate-x-0'
         )}
       >
         <div className="flex flex-col h-full">
-          <div className="flex items-center justify-between p-3 border-b border-border">
+          <div className="flex items-center justify-between p-3 border-b border-slate-800">
             {menu && (
-              <h2 className="text-lg font-semibold text-foreground transition-opacity duration-200 ease-in-out"></h2>
+              <h2 className="text-lg font-semibold text-indigo-400 transition-opacity duration-200 ease-in-out"></h2>
             )}
             <button
               onClick={() => setMenu(!menu)}
               className={cn(
-                'p-2 rounded-md hover:bg-accent text-muted-foreground hover:text-foreground transition-colors duration-200',
+                'p-2 rounded-md hover:bg-slate-800 text-slate-300 hover:text-slate-200 transition-colors duration-200',
                 !menu && 'mx-auto'
               )}
             >
@@ -91,16 +91,16 @@ export default function Sidebar({ items, menu, setMenu }: Props) {
                             'w-full flex items-center gap-3 px-2 py-2.5 rounded-md transition-all duration-200 group',
                             'hover:scale-[1.01] active:scale-[0.98]',
                             isActive
-                              ? 'bg-primary text-primary-foreground'
-                              : 'hover:bg-accent text-muted-foreground hover:text-foreground'
+                              ? 'bg-indigo-600 text-white'
+                              : 'hover:bg-slate-800 text-slate-300 hover:text-slate-200'
                           )}
                         >
                           <div
                             className={cn(
                               'text-xl flex items-center justify-center min-w-8',
                               isActive
-                                ? 'text-primary-foreground'
-                                : 'text-muted-foreground group-hover:text-foreground'
+                                ? 'text-white'
+                                : 'text-slate-300 group-hover:text-slate-200'
                             )}
                           >
                             {item.icon}
@@ -114,7 +114,7 @@ export default function Sidebar({ items, menu, setMenu }: Props) {
                         </button>
                       </TooltipTrigger>
                       {!menu && (
-                        <TooltipContent side="right" className="bg-popover">
+                        <TooltipContent side="right" className="bg-slate-800 text-slate-200">
                           {item.name}
                         </TooltipContent>
                       )}
